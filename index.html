@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>魔獸VTX：語音輸入繁體中文</title>
+<meta name="description" content="開口說話，魔獸世界：永恆的聊天框自動打出繁體中文。">
+<style>
+  :root {
+    --bg: #f6f3ec; --surface: #fffdf8; --text: #22201b; --muted: #6b655a;
+    --line: #e2dccf; --accent: #9a5b00; --accent-ink: #fff; --kbd: #efe9dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161b; --surface: #1c1f26; --text: #ece8df; --muted: #a29d92;
+      --line: #2e323b; --accent: #e3a43a; --accent-ink: #1a1408; --kbd: #2a2e37;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.75 "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 16px 40px; }
+  h1 { font-size: 44px; line-height: 1.15; margin: 0 0 4px; letter-spacing: .02em; }
+  h2 { font-size: 22px; margin: 48px 0 12px; }
+  .version { color: var(--muted); font-size: 15px; }
+  .lead { font-size: 20px; margin: 16px 0 28px; }
+  .download {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; font-size: 19px; text-decoration: none;
+    padding: 14px 28px; border-radius: 10px;
+  }
+  .download:hover { filter: brightness(1.08); }
+  .download:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .note { color: var(--muted); font-size: 15px; margin-top: 10px; }
+  ol, ul { padding-left: 1.4em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  code, kbd {
+    font-family: ui-monospace, Consolas, monospace; font-size: .88em;
+    background: var(--kbd); padding: 1px 6px; border-radius: 5px;
+  }
+  kbd { border: 1px solid var(--line); border-bottom-width: 2px; white-space: nowrap; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 15px; color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px 20px; }
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 56px; padding-top: 16px; }
+  @media (max-width: 480px) { h1 { font-size: 34px; } .lead { font-size: 18px; } th, td { padding: 8px 10px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>魔獸VTX</h1>
+  <div class="version">版本 v1.1.0 · Windows 10 / 11</div>
+  <p class="lead">開口說話，《魔獸世界：永恆》的聊天框自動打出繁體中文。聽得懂「副本」「天賦」「坦補輸出」，地城和團隊副本名稱也不會打錯。</p>
+
+  <a class="download" href="WowVTX.zip" download>下載 WowVTX.zip</a>
+  <p class="note">需要你自己的 OpenAI API 金鑰。每句話約 NT$0.01。</p>
+
+  <h2>安裝</h2>
+  <ol>
+    <li>在 <code>WowVTX.zip</code> 上按右鍵，選「內容」。勾選最下方的「解除封鎖」，按「確定」。這樣 Windows 就不會擋這個程式。</li>
+    <li>解壓縮 <code>WowVTX.zip</code>，會得到一個 <code>WowVTX</code> 資料夾。</li>
+    <li>到 <a href="https://platform.openai.com/api-keys">platform.openai.com/api-keys</a> 建立 API 金鑰，並在帳單頁面儲值少量額度。</li>
+    <li>雙擊 <code>WowVTX.exe</code>，會開啟魔獸VTX 設定視窗。如果出現藍色的「Windows 已保護您的電腦」，按文字裡的「其他資訊」，再按「仍要執行」。</li>
+    <li>把金鑰貼到「1. OpenAI API 金鑰」，按「測試金鑰」。下方顯示「金鑰可以用」就對了。</li>
+    <li>在「2. 麥克風」選你的麥克風，說話時綠條會動。</li>
+    <li>按「儲存並套用」。視窗不要關，縮小就好。</li>
+    <li>遊戲的顯示模式設為「視窗（全螢幕）」。</li>
+  </ol>
+  <p class="note">這個程式沒有付費簽章，所以 Windows 會提醒。每次下載新版本都要再做一次第 1 步。</p>
+
+  <h2>快捷鍵</h2>
+  <table>
+    <tr><th>按鍵</th><th>功能</th><th>提示音</th></tr>
+    <tr><td><kbd>F8</kbd></td><td>開啟／關閉語音</td><td>音調上升＝開，下降＝關</td></tr>
+    <tr><td><kbd>F9</kbd></td><td>切換「按住說話」／「持續聆聽」</td><td>一聲＝按住說話，兩聲＝持續聆聽</td></tr>
+    <tr><td><kbd>F10</kbd></td><td>切換「手動送出」／「自動送出」</td><td>一聲低音＝手動，兩聲高音＝自動</td></tr>
+    <tr><td><kbd>右 Ctrl</kbd></td><td>按住說話，放開後轉成文字</td><td>短促一聲</td></tr>
+  </table>
+  <p class="note">這些是預設按鍵。想換成自己習慣的鍵：在魔獸VTX 視窗的「3. 快捷鍵」按一下要換的按鈕，再按新的鍵，最後按「儲存並套用」。</p>
+
+  <h2>怎麼用</h2>
+  <ol>
+    <li>在遊戲中按 <kbd>F8</kbd> 開啟語音。</li>
+    <li>按住 <kbd>右 Ctrl</kbd>，說話，然後放開。</li>
+    <li>聊天框會打開並填好文字。檢查一下，按 <kbd>Enter</kbd> 送出。</li>
+  </ol>
+  <p>「持續聆聽」模式下，每停頓 0.7 秒就會送出一句。跟 Discord 或身邊的人講話時，記得先按 <kbd>F8</kbd> 關掉。</p>
+  <p>文字會送到聊天框目前的頻道。先打一次 <code>/p</code>、<code>/g</code> 或 <code>/s</code> 選好頻道，再開始說話。</p>
+
+  <h2>調整</h2>
+  <div class="card">
+    <p><strong>持續聆聽太敏感或聽不到你：</strong>看「2. 麥克風」的音量條。先說話，再安靜，把紅線拉到兩者之間：說話時綠條超過紅線，安靜時在紅線左邊。</p>
+    <p><strong>用錯麥克風：</strong>在「2. 麥克風」選另一個，按「儲存並套用」。</p>
+    <p><strong>換快捷鍵：</strong>在「3. 快捷鍵」按一下按鈕，再按想用的鍵。</p>
+    <p><strong>某個詞一直打錯：</strong>按「編輯詞彙表…」，加一行修正，例如 <code>天府=天賦</code>。新的地名、首領或物品名稱直接加一行即可。存檔後按「儲存並套用」。</p>
+  </div>
+
+  <h2>注意事項</h2>
+  <ul>
+    <li>程式用剪貼簿貼上文字，會覆蓋你上一次複製的內容。</li>
+    <li>如果聊天框已經打開，程式按下的 Enter 會先送出你原本打的字。</li>
+    <li>每則聊天訊息最多 255 個字。持續聆聽模式下，一句話最長 15 秒。</li>
+    <li>你的金鑰只存在你自己的電腦，語音只會傳給 OpenAI 轉成文字。</li>
+    <li>這個工具的運作方式和自己貼上文字一樣，但暴雪沒有正式認可這類工具。是否使用「自動送出」請自行斟酌。</li>
+  </ul>
+
+  <footer>魔獸VTX 是玩家自製的工具，與 Blizzard Entertainment 無關。World of Warcraft 是 Blizzard Entertainment 的商標。</footer>
+</main>
+</body>
+</html>
